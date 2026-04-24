@@ -1,0 +1,1196 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: opacity 0.4s 0.1s;
+}
+
+a:hover {
+    opacity: 0.3;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    color: #000;
+    font-family: 'Hina Mincho', serif;
+    background-color: #E6E2C8;
+    overflow-x: hidden;
+}
+
+.wrap {
+    margin: 0 auto;
+}
+
+.header {
+    width: 240px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F3EDaa;
+    height: 100vh;
+}
+
+.header img {
+    width: 180px;
+}
+
+.header-logo {
+    min-width: 45px;
+    margin-top: 50px;
+}
+
+nav {
+    width: 100%;
+    text-align: center;
+    margin: auto 0;
+}
+
+nav ul li {
+    margin: 20% 0;
+    height: 30px;
+    line-height: 1;
+    font-size: 20px;
+    text-shadow: 4px 4px 5px #00000066;
+}
+
+nav ul li a img {
+    width: auto;
+    height: 100%;
+}
+
+.nav-access img {
+    height: 75%;
+}
+
+.nav-logo {
+    display: none;
+}
+
+.hum-menu {
+    display: none;
+}
+
+.up-btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 35px;
+    right: 5%;
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1;
+    display: none;
+}
+
+.up-btn span::after {
+    content: "top";
+    display: block;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.top-btn {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    text-align: center;
+}
+
+.top-btn p {
+    margin-bottom: 15px;
+}
+
+.top-btn .btn {
+    padding: 10px 50px;
+}
+
+.W-max1200 {
+    margin: 0 auto;
+}
+
+.aisatsu .W-max1200 p {
+    margin-bottom: 15rem;
+}
+
+section {
+    margin: 0 auto;
+}
+
+
+.footer {
+    background-color: #E6E2C8;
+}
+
+.footer>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+.footer-center {
+    width: 60%;
+    text-align: center;
+}
+
+.footer-center a {
+    font-size: 2rem;
+}
+
+.footer-center p:nth-of-type(1) {
+    margin-bottom: 25px;
+}
+
+.footer-center p:nth-of-type(2) {
+    margin-top: 25px;
+    margin-bottom: 1rem;
+}
+
+.footer-map {
+    margin-top: 25px;
+}
+
+.footer-map a {
+    font-size: 1rem;
+}
+
+.sns img {
+    width: 50px;
+    margin: 3rem auto 0;
+} 
+
+.btn {
+    display: flex;
+    background-color: #C8A95D;
+    border-radius: 2px;
+    padding: 10px 15px;
+    transition: background-color 0.4s 0.1s;
+}
+
+.btn img {
+    width: 100px;
+}
+
+.btn:hover {
+    opacity: 1;
+    background-color: #B89A50;
+}
+
+.footer-logo {
+    width: 15%;
+    max-width: 300px;
+    height: 100%;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.footer-logo img {
+    width: auto;
+    min-width: 45px;
+    height: 90%;
+}
+
+.copy {
+    padding: 50px 40px 30px;
+    width: 100%;
+}
+
+.flex-box {
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* トップページ */
+
+.top-img {
+    position: relative;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    text-shadow: 4px 4px 5px #00000066;
+}
+
+.top-img div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    top: 0;
+    left: 0;
+    background: url(../img/keshiki01.jpeg) no-repeat center/cover;
+    filter: brightness(90%);
+    opacity: 1;
+}
+
+.top-img h2 {
+    position: absolute;
+    color: #fff;
+    writing-mode: vertical-lr;
+    top: 10%;
+    right: 44%;
+    font-size: 30px;
+    z-index: 2;
+    font-weight: normal;
+}
+
+.top-img h2:nth-of-type(2) {
+    position: absolute;
+    top: 30%;
+    left: 43%;
+}
+
+#top-room img,
+#top-food img,
+#top-onsen img {
+    width: 60vw;
+}
+
+.index header {
+    opacity: 1;
+    animation: top 3s both 1.5s;
+}
+
+main {
+    margin-left: 240px;
+}
+
+#top-concept,
+#about-concept,
+#room-concept,
+#food-concept,
+#onsen-concept,
+#access-concept {
+    margin: 0 auto 15rem;
+    text-align: center;
+    line-height: 2;
+}
+
+#top-concept h2 {
+    font-size: 2rem;
+    margin: 15rem 0 4rem;
+    line-height: 2;
+}
+
+.top-sec {
+    margin-bottom: 13rem;
+    display: flex;
+}
+
+.etc {
+    display: block;
+    margin: 10% 10% 10% 6%;
+}
+
+.top-sec h2 {
+    margin-bottom: 1rem;
+}
+
+.top-sec:not(#top-news) ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.top-sec>a {
+    display: block;
+    margin-top: 2rem;
+    text-align: right;
+    position: relative;
+    line-height: 1;
+    margin-right: 2.5rem;
+}
+
+.top-sec>a::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    transform: rotate(45deg)translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: -2rem;
+}
+
+#top-news ul li {
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid #00000035;
+}
+
+#top-news ul li a {
+    display: block;
+}
+
+#top-news ul li a span {
+    display: inline-block;
+    margin-right: 3rem;
+    color: #00000088;
+}
+
+/* トップページ */
+
+/* ご挨拶ページ */
+.title {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/title-aisatsu.jpg) no-repeat center/cover;
+    margin-bottom: 15rem;
+}
+
+.title h1 {
+    color: #fff;
+    text-shadow: 0 0 7px #000;
+    writing-mode: vertical-lr;
+}
+
+.aisatsu p:not(footer p) {
+    text-align: center;
+    line-height: 2;
+}
+
+.aisatsu footer {
+    margin-top: 30rem;
+}
+
+.aisatsu .slick li {
+    padding: 0 10px;
+}
+
+/* ご挨拶ページ */
+
+/* アクセスページ */
+.access .title {
+    background-image: url(../img/top02.jpg);
+    filter: brightness(90%);
+}
+
+.access main {
+    margin-bottom: 20rem;
+    align-items: center;
+}
+
+.map {
+    width: 65vw;
+    height: auto;
+    line-height: 1.5;
+    margin: 0 auto 50px;
+}
+
+.map h2 {
+    margin-bottom: 30px;
+}
+
+.access main div p {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.access iframe {
+    width: 100%;
+    height: 40rem;
+}
+
+.car,
+.train {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.car h2,
+.train h2 {
+    position: relative;
+    padding-top: 50px;
+    margin-bottom: 30px;
+}
+
+.car h2::before,
+.train h2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 1px;
+    background: #000;
+}
+
+/* アクセスページ */
+
+/* 予約ページ */
+.reserve .title {
+    background-image: url(../img/top01.jpg);
+    filter: brightness(90%);
+}
+
+.reserve h1 {
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+.reserve section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto 10rem;
+    max-width: 1000px;
+    border: 1px solid #000;
+    padding: 1.5rem 0;
+}
+
+.reserve section h2 {
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.reserve section h2::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    display: block;
+    margin-top: 1.5rem;
+}
+
+.reserve section>div {
+    width: 45%;
+}
+
+.reserve section ul {
+    margin-bottom: 2rem;
+}
+
+.reserve section form {
+    width: 45%;
+}
+
+.reserve section form p {
+    margin-bottom: 0.3rem;
+    color: #8c8278;
+}
+
+.reserve section form p:first-child {
+    line-height: 2;
+    text-align: left;
+    color: #000;
+    margin-bottom: 2rem;
+}
+
+.reserve section form p:not(p:first-child)::before {
+    content: "-";
+    margin-right: 1rem;
+}
+
+.reserve section form p:not(p:first-child)::after {
+    content: "-";
+    margin-left: 1rem;
+}
+
+.reserve section form label {
+    display: block;
+    margin: 1.5rem 0 2rem;
+}
+
+.reserve section form label input,
+.reserve section form label select {
+    height: 2rem;
+    padding: 0 1rem;
+    margin: 0 1rem;
+}
+
+.reserve section form button {
+    margin: 0 auto;
+    display: block;
+}
+
+form button {
+    color: #fff;
+    padding: 15px 40px;
+    font-size: 16px;
+}
+
+.form-slide li {
+    width: 400px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.form-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.yoyaku-room form label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    text-align: left;
+    padding-left: 10%;
+}
+
+.yoyaku-room form input,
+.yoyaku-room form select {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.yoyaku-room form p {
+    text-align: left;
+    margin: 0 auto;
+}
+
+/* 予約ページ */
+
+/* お部屋ページ */
+.room .title {
+    background-image: url(../img/room03.png);
+    filter: brightness(90%);
+}
+
+.img {
+    width: 60vw;
+    height: auto;
+    margin-bottom: 15rem;
+}
+
+.setsumei {
+    display: flex;
+    line-height: 2;
+    text-align: left;
+
+}
+
+.stm {
+    display: block;
+    margin: 5% 5% 0;
+}
+
+/* お部屋ページ */
+
+/* お料理ページ */
+.food .W-max1200 {
+    padding-bottom: 100px;
+}
+
+.food .title {
+    background-image: url(../img/eat02.png);
+    filter: brightness(90%);
+}
+
+.ryouri {
+    background-image: url(../img/washi.jpg);
+    max-width: 68.5%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ryouri h2 {
+    padding: 30px 0;
+}
+
+.ryouri img,
+.ryouri p {
+    margin-bottom: 80px;
+}
+
+.ryouri .setsumei {
+    display: block;
+    text-align: center;
+}
+
+.osinagaki p {
+    padding-bottom: 100px;
+}
+
+/* お料理ページ */
+
+/* 温泉ページ */
+.onsen .title {
+    background-image: url(../img/onsen01.jpg);
+    filter: brightness(90%);
+}
+
+.onsen main {
+    text-align: center;
+}
+
+#onsen-concept p {
+    margin-bottom: 6rem;
+}
+
+.furo {
+    display: flex;
+    margin: 0 auto 120px;
+    text-align: left;
+    gap: 10px;
+}
+
+.furo h2 {
+    text-align: center;
+}
+
+.roten,
+.yoru {
+    margin: 0 auto;
+    max-width: 450px;
+}
+
+.roten {
+    margin-left: 250px;
+}
+
+.yoru {
+    margin-right: 250px;
+}
+
+.roten h2,
+.yoru h2,
+.kounou h2,
+.tegata-setsumei h2 {
+    margin: 20px 0;
+}
+
+.roten p,
+.yoru p {
+    padding: 0 20px;
+}
+
+.tegata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin: 120px auto;
+    text-align: left;
+    padding-bottom: 100px;
+}
+
+.tegata img {
+    width: 350px;
+}
+
+.tegata-setsumei {
+    display: block;
+}
+
+.tegata p {
+    line-height: 2;
+}
+
+/* 温泉ページ */
+
+
+/* スリック */
+.slick-prev {
+    transform: translate(50%, -50%);
+}
+
+.slick-prev:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    transform: rotate(-135deg);
+}
+
+.slick-next:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    transform: rotate(45deg);
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #000;
+}
+
+/* スリック */
+
+/* スクロールフワ */
+.fuwa {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s;
+}
+
+.fuwa.on {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* スクロールフワ */
+
+/* レスポンシブ */
+
+@media(max-width:1200px) {
+
+    main {
+        margin-left: 0;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    .header {
+        width: 100%;
+        height: 80px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-logo {
+        position: fixed;
+        top: -30px;
+        right: 20px;
+    }
+
+    .header-logo img {
+        filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+        transition: 0.3s;
+        width: 70px;
+        margin-top: 0px;
+    }
+
+    .header.scrolled .hum-menu {
+        filter: none;
+    }
+
+    .header.scrolled .header-logo img {
+        filter: none;
+    }
+
+    .hum-menu {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        /* height: 40px; */
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+    }
+
+
+    .hum-menu .line,
+    .hum-menu .line::before,
+    .hum-menu .line::after {
+        content: "";
+        display: block;
+        background-color: #fff;
+        width: 50%;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        top: 18px;
+        transition: all 0.5s;
+    }
+
+    .header.scrolled .hum-menu .line,
+    .header.scrolled .hum-menu .line::before,
+    .header.scrolled .hum-menu .line::after {
+        background-color: #1a1a1a;
+    }
+
+    .hum-menu .line::before {
+        width: 150%;
+        top: -10px;
+    }
+
+    .hum-menu .line::after {
+        top: 10px;
+    }
+
+    .hum-menu span:not(.line) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+    }
+
+    .hum-menu.on .line {
+        background-color: transparent !important;
+        transform: translateX(5px);
+    }
+
+    .hum-menu.on .line::before {
+        background-color: #1a1a1a;
+        width: 100%;
+        transform: translateY(10px)rotate(45deg);
+    }
+
+    .hum-menu.on .line::after {
+        background-color: #1a1a1a;
+        width: 100%;
+        transform: translateY(-10px)rotate(-45deg);
+    }
+
+    nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-image: url(../img/washi.png);
+        width: 100%;
+        height: 100vh;
+        opacity: 0;
+        transform: translateX(-100vw);
+        transition: all 0.5s 0.2s;
+    }
+
+    nav ul li {
+        box-sizing: content-box;
+        margin: 3vh;
+        padding: 10px 10vw;
+        height: 25px;
+    }
+
+    nav.on {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .nav-logo {
+        display: flex;
+        justify-content: center;
+        margin: 60px 0 100px 0;
+    }
+
+    .nav-logo img {
+        width: 100px;
+    }
+
+    .up-btn {
+        display: none;
+    }
+
+    .top-btn {
+        bottom: 0%;
+        right: 0%;
+        display: block;
+    }
+
+    .footer {
+        padding: 50px calc((100% - 1300px) / 2) 0;
+    }
+
+    .footer-center {
+        width: 70%;
+        font-size: 1.3rem;
+        padding: 0;
+    }
+
+    .footer-center p:nth-child(2) {
+        font-size: 2.5rem;
+    }
+
+    .copy {
+        margin-bottom: 5rem;
+    }
+
+    .footer-logo {
+        display: none;
+    }
+
+    .W-max1200 {
+        max-width: 1200px;
+        text-align: center;
+        margin: 0 auto 10rem;
+    }
+
+    .W-max1200 p {
+        margin: 0 15%;
+        font-size: 1rem;
+    }
+
+    /* トップページ */
+    .top-img h2 {
+        position: absolute;
+        color: #fff;
+        writing-mode: vertical-lr;
+        top: 20%;
+        left: 55%;
+        font-size: 27px;
+        z-index: 2;
+        font-weight: normal;
+    }
+
+    .top-img h2:nth-of-type(2) {
+        position: absolute;
+        top: 40%;
+        right: 55%;
+    }
+
+    .top-img div:nth-child(2) {
+        width: 70vw;
+        height: 120vw;
+        max-height: 80vh;
+        top: 3vw;
+        right: 3vw;
+        left: auto;
+        background: url(../img/top01-2.png) no-repeat center/cover;
+
+    }
+
+    .index main.W-max1200 {
+        padding-top: 0;
+    }
+
+    #top-concept {
+        font-size: 1.4rem;
+        margin: 10rem auto;
+    }
+
+    #top-concept h2 {
+        font-size: 1.5rem;
+        margin-top: 10rem;
+    }
+
+    .top-sec {
+        flex-direction: column;
+    }
+
+    .top-sec h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .top-room,
+    .top-food,
+    .top-onsen {
+        margin: 0 auto;
+    }
+
+    #top-room img,
+    #top-food img,
+    #top-onsen img {
+        width: 90vw;
+    }
+
+    .top-sec:not(#top-news) ul {
+        justify-content: center;
+    }
+
+    /* トップページ */
+
+    /* 挨拶ページ */
+
+    .aisatsu .W-max1200 p {
+        margin-bottom: 10rem;
+    }
+
+    .aisatsu footer {
+        margin-top: 10rem;
+    }
+
+    /* 挨拶ページ */
+
+    /* 部屋ページ */
+    .setsumei {
+        display: block;
+    }
+
+    .setsumei img {
+        width: 100vw;
+        margin-bottom: 3rem;
+    }
+
+    .stm h2 {
+        margin: 0 10%;
+    }
+
+    .stm p {
+        margin-bottom: 5rem;
+    }
+
+    /* 部屋ページ */
+
+    /* 料理ページ */
+    #food-concept {
+        margin-bottom: 10rem;
+    }
+
+    .ryouri {
+        max-width: 90%;
+    }
+
+    .ryouri img {
+        width: 100%;
+    }
+
+    /* 料理ページ */
+
+    /* 温泉ページ */
+    #onsen-concept {
+        margin-bottom: 10rem;
+    }
+
+    .furo {
+        display: block;
+    }
+
+    .roten,
+    .yoru {
+        margin: 0 auto;
+    }
+
+    .roten p {
+        margin-bottom: 100px;
+    }
+
+    .tegata {
+        display: block;
+        text-align: center;
+    }
+
+    .tegata img {
+        margin: 0 auto;
+    }
+
+    /* 温泉ページ */
+
+    /* 予約ページ */
+    .reserve .hum-menu {
+        left: 5px;
+    }
+
+    .reserve section {
+        width: 90%;
+    }
+
+    .reserve section h2 {
+        font-size: 1.3rem;
+    }
+
+    .reserve section>div {
+        width: 90%;
+    }
+
+    .reserve section>form {
+        width: 90%;
+    }
+
+    .reserve section ul {
+        margin: 0;
+    }
+   
+    .yoyaku-room form label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        text-align: left;
+        padding-left: 3%;
+    }
+
+    .yoyaku-room form input,
+    .yoyaku-room form select {
+        width: 150px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        background: #fff;
+    }
+
+    .yoyaku-room form p {
+        text-align: left;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    .reserve section form p:first-child {
+        margin: 2rem 0;
+    }
+
+    /* 予約ページ */
+
+    /* アクセスページ */
+    #access-concept {
+        margin: 0 auto 10rem;
+    }
+
+    .access main {
+        display: block;
+    }
+
+    .access main div:nth-child(1) {
+        width: 95%;
+        margin-bottom: 3rem;
+    }
+
+    .access main div:nth-child(2) {
+        width: 95%;
+    }
+
+    .access iframe {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .map {
+        scroll-margin-top: 100px;
+    }
+
+    /* アクセスページ */
+}
