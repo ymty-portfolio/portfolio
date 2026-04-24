@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ご予約・お問い合わせ｜BlueWave</title>
+    <!-- cssの設定 -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body id="top">
+    <!-- 背景の魚 -->
+    <div class="fish-bg"></div>
+    <!-- headerの設定 -->
+    <header class="header">
+      <div class="head">
+        <h1>
+          <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
+        </h1>
+        <div class="hmenu">
+          <div class="header-right">
+            <div class="hn-tel">
+              <a href="tel:09012341234"
+                ><img src="img/phone.png" alt="phoneicon" />090-1234-1234</a
+              >
+            </div>
+            <button class="ham" id="hamburger">
+              <span></span>
+            </button>
+          </div>
+          <div class="hn">
+            <nav class="h-nav">
+              <ul>
+              <li class="home"><a href="index.html">ホーム</a></li>
+              <li><a href="about.html">BlueWaveについて</a></li>
+              <li><a href="target.html">釣れる魚種</a></li>
+              <li><a href="plan.html">料金・アクセス</a></li>
+              <li><a href="contact.html">ご予約・お問い合わせ</a></li>
+            </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- header波 -->
+    <svg viewBox="0 10 1821 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        id="h-nami"
+        class="nami"
+        d="M1297.4 34.1367C1510.01 34.1367 1633.26 53.1971 1821 101.5V0.5L2.70605e-05 0.5V34.1367C162.22 34.1367 309.039 93.3512 539.661 93.3512C770.284 93.3512 1084.79 34.1367 1297.4 34.1367Z"
+      >
+        <animate
+          attributeType="XML"
+          attributeName="d"
+          dur="10s"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;"
+          repeatCount="indefinite"
+          values="
+        M1297.4 34.1367C1510.01 34.1367 1633.26 53.1971 1821 101.5V0.5L2.70605e-05 0.5V34.1367C162.22 34.1367 309.039 93.3512 539.661 93.3512C770.284 93.3512 1084.79 34.1367 1297.4 34.1367Z;
+        M1288.12 83C1414.47 83 1681.09 28.3912 1821 28.3912V0L0.00012207 0V83C122.78 83 235.21 28.3912 454.536 28.3912C673.863 28.3912 1161.77 83 1288.12 83Z;
+        M1297.4 34.1367C1510.01 34.1367 1633.26 53.1971 1821 101.5V0.5L2.70605e-05 0.5V34.1367C162.22 34.1367 309.039 93.3512 539.661 93.3512C770.284 93.3512 1084.79 34.1367 1297.4 34.1367Z;
+        "
+        ></animate>
+      </path>
+    </svg>
+    <!-- メイン -->
+    <section class="contact">
+      <h2>お問い合わせ</h2>
+      <form class="form" action="#" method="post">
+        <p class="required text">
+          今回のお問い合わせ内容に<br />
+          チェックを入れてください。（複数可）
+        </p>
+        <input type="checkbox" id="reserve" name="check[]" value="予約" />
+        <label for="reserve">ご予約　 </label>
+        <input type="checkbox" id="inquiry" name="check[]" value="問い合わせ" />
+        <label for="inquiry">お問い合わせ </label>
+        <div class="boder"></div>
+        <p class="required text"><label for="name">お名前　</label></p>
+        <input type="text" id="name" name="name" class="area" required />
+        <p class="required text"><label for="kana">フリガナ　</label></p>
+        <input type="text" id="kana" name="kana" class="area" required />
+        <p class="required text"><label for="mail">メールアドレス　</label></p>
+        <input type="email" id="mail" name="mail" class="area" required />
+        <p class="required text"><label for="tel">お電話番号　</label></p>
+        <input type="tel" id="tel" name="tel" class="area" required />
+        <p class="text"><label for="address">ご住所</label></p>
+        <input type="text" id="address" name="address" class="area" />
+        <p class="text"><label for="people">乗船希望人数</label></p>
+        <select name="people" id="people">
+          <option value="1">1名</option>
+          <option value="2">2名</option>
+          <option value="3">3名</option>
+          <option value="4">4名</option>
+          <option value="5">5名</option>
+          <option value="6">6名</option>
+          <option value="7">7名</option>
+          <option value="8">8名</option>
+          <option value="9">9名</option>
+          <option value="10">10名</option>
+          <option value="11">11名</option>
+          <option value="12">12名</option>
+        </select>
+        <p class="text"><label for="todaydate">ご希望日</label></p>
+        <input type="date" id="todaydate" name="todaydate" />
+        <p class="text"><label for="textarea">お問い合わせ内容</label></p>
+        <textarea name="textarea" id="textarea"></textarea>
+        <div class="mit">
+          <input type="submit" value="内容を確認して送信" id="submit" />
+        </div>
+      </form>
+      <p class="privacy-policy">
+        このサイトはreCAPTCHAによって保護されており、Googleの
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>
+        と
+        <a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a>
+        が適用されます。
+      </p>
+      <div class="boder"></div>
+      <dl class="tel">
+        <dt>お電話でのご予約・お問い合わせ</dt>
+        <dd>
+          <a class="number" href="tel:09012341234"
+            ><img src="img/phone2.png" alt="phoneicon" />090-1234-1234</a
+          >
+          <p class="hour">電話受付：9:00~19:00</p>
+        </dd>
+      </dl>
+    </section>
+    <!-- footerの設定 -->
+    <svg viewBox="0 0 1821 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- footer波 -->
+      <path
+        id="nami"
+        class="nami"
+        d="M523.6 195.863C310.986 195.863 187.739 176.803 0 128.5V229.5H1821V195.863C1658.78 195.863 1511.96 136.649 1281.34 136.649C1050.72 136.649 736.214 195.863 523.6 195.863Z"
+      >
+        <animate
+          attributeType="XML"
+          attributeName="d"
+          dur="10s"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;"
+          repeatCount="indefinite"
+          values="
+        M523.6 195.863C310.986 195.863 187.739 176.803 0.00012207 128.5V229.5H1821V195.863C1658.78 195.863 1511.96 136.649 1281.34 136.649C1050.72 136.649 736.214 195.863 523.6 195.863Z;
+        M532.88 146.5C406.531 146.5 139.912 201.109 0 201.109V229.5H1821V146.5C1698.22 146.5 1585.79 201.109 1366.46 201.109C1147.14 201.109 659.229 146.5 532.88 146.5Z;
+        M523.6 195.863C310.986 195.863 187.739 176.803 0.00012207 128.5V229.5H1821V195.863C1658.78 195.863 1511.96 136.649 1281.34 136.649C1050.72 136.649 736.214 195.863 523.6 195.863Z;
+        "
+        ></animate>
+      </path>
+      <!-- 船 -->
+      <path
+        id="ahiru"
+        class="hune"
+        data-length="90"
+        data-rotate="180"
+        data-float=".9"
+        d="M25.0476 0C25.6853 0 26.2022 0.51226 26.2022 1.14416V42.9169L55.2719 46.9604L55.4996 47.119L55.5001 47.1195C55.5004 47.1197 55.5008 47.12 55.5014 47.1204C55.5027 47.1213 55.5047 47.1226 55.5073 47.1244C55.5126 47.1281 55.5209 47.1339 55.5316 47.1414C55.5532 47.1564 55.5855 47.1789 55.6281 47.2084C55.7134 47.2675 55.84 47.3548 56.0038 47.4676C56.3316 47.6935 56.8092 48.0211 57.4073 48.4272C58.6038 49.2397 60.281 50.3661 62.2042 51.6202C66.0597 54.1341 70.87 57.1402 74.769 59.1703C78.6682 61.2004 83.8779 63.4143 88.1367 65.1284C90.2612 65.9835 92.14 66.7105 93.4873 67.2237C94.1609 67.4803 94.7014 67.6834 95.0731 67.8222C95.243 67.8856 95.3776 67.9355 95.4735 67.971L143.295 69.794H154.97L166.304 56.9794H180.213L186.721 40.9611H183.915V34.0961H201.703L206.725 28.6041H207.237V14.4165C207.237 13.7846 207.754 13.2723 208.392 13.2723C209.029 13.2723 209.546 13.7846 209.546 14.4165V28.6041H213.01V34.0961H217.628V56.9794H222.48L224.685 66.813C225.432 66.5336 226.418 66.1599 227.52 65.7247C229.952 64.7633 232.906 63.5229 235.1 62.3749C237.014 61.3736 239.43 59.7181 242.358 57.6494C244.186 56.358 246.087 54.9884 247.532 53.9407C248.254 53.4169 248.862 52.9738 249.289 52.662C249.502 52.5061 249.671 52.3827 249.785 52.2986C249.843 52.2565 249.887 52.2243 249.917 52.2025C249.932 52.1916 249.943 52.1834 249.951 52.1779C249.954 52.1753 249.957 52.173 249.959 52.1717C249.96 52.171 249.96 52.1707 249.961 52.1703L249.961 52.1699L250.268 51.9451H268L267.898 53.1822V53.1844C267.898 53.1857 267.898 53.1875 267.898 53.1898C267.897 53.1946 267.897 53.2016 267.896 53.2108C267.894 53.2293 267.892 53.2565 267.889 53.2922C267.883 53.3636 267.874 53.4689 267.862 53.6046C267.838 53.8759 267.803 54.2695 267.756 54.7599C267.664 55.7406 267.528 57.11 267.353 58.6653C267.004 61.7657 266.496 65.6426 265.865 68.6535C265.229 71.6873 263.612 76.7979 262.047 81.3541C260.49 85.8886 258.926 90.0431 258.378 91.1296C258.135 91.6111 257.922 92.0669 257.716 92.5138C257.513 92.9553 257.31 93.3991 257.099 93.8269C256.67 94.6938 256.181 95.5426 255.455 96.3919C254.726 97.2446 253.657 98.1086 252.825 98.7307C252.399 99.0489 252.015 99.3181 251.737 99.5079C251.598 99.603 251.485 99.6786 251.406 99.7309C251.366 99.7571 251.336 99.7776 251.314 99.7917C251.303 99.7988 251.295 99.8044 251.289 99.8083C251.286 99.8102 251.283 99.8116 251.281 99.8127C251.281 99.8133 251.28 99.8137 251.279 99.8141L251.278 99.815L250.991 100H59.6204L59.3615 99.8597L59.9154 98.8558C59.3614 99.8597 59.3616 99.8597 59.3615 99.8597L59.3611 99.8592C59.3608 99.8591 59.3602 99.859 59.3597 99.8588C59.3586 99.8582 59.3568 99.8572 59.3548 99.8561C59.3504 99.8537 59.3437 99.8503 59.3354 99.8458C59.3186 99.8367 59.2938 99.8228 59.2614 99.8051C59.1966 99.7698 59.101 99.7179 58.9782 99.6505C58.7323 99.5156 58.3762 99.3189 57.9332 99.0722C57.0472 98.5785 55.8126 97.8828 54.419 97.0739C51.6405 95.4611 48.1964 93.3796 45.6187 91.5475C40.465 87.8847 33.6385 81.5414 26.7569 74.4789C19.8485 67.3888 10.7696 56.2785 7.92858 52.1301C6.51193 50.0615 4.82448 47.3506 3.49796 45.169C2.83318 44.0757 2.25634 43.1104 1.84549 42.4186C1.64007 42.0726 1.47611 41.7948 1.36337 41.6033C1.307 41.5076 1.26303 41.4334 1.23349 41.383C1.2188 41.358 1.2077 41.3388 1.20011 41.3258C1.19635 41.3194 1.1935 41.3144 1.19154 41.3111C1.19056 41.3094 1.1898 41.3079 1.18929 41.307C1.18905 41.3066 1.18852 41.3064 1.18839 41.3061L0 39.2726L23.8931 42.5956V1.14416C23.8931 0.51226 24.41 0 25.0476 0ZM188.559 53.7757H205.159V43.7071H192.649L188.559 53.7757Z"
+        fill="#071F69"
+      />
+    </svg>
+    <!-- footerナビ -->
+    <footer>
+      <div class="fn">
+        <nav class="f-nav">
+          <ul>
+          <li><a href="about.html">BlueWaveについて</a></li>
+          <li><a href="target.html">釣れる魚種</a></li>
+          <li><a href="plan.html">料金・アクセス</a></li>
+          <li><a href="contact.html">ご予約・お問い合わせ</a></li>
+        </ul>
+        </nav>
+        <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
+        <div class="phone">
+          <a href="tel:09012341234"
+            ><img src="img/phone.png" alt="phone" />090-1234-1234</a
+          >
+        </div>
+        <div class="fp">
+          <p>電話受付：9：00～19：00　定休日：無し</p>
+          <p>&copy;BlueWave</p>
+        </div>
+      </div>
+    </footer>
+    <button id="topBtn" class="top-btn">
+      <img src="img/topt.png" alt="トップへ戻る" />
+    </button>
+    <!-- jsの設定 -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

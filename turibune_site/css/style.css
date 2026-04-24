@@ -1,0 +1,1050 @@
+@charset "utf-8";
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+  vertical-align: bottom;
+}
+
+html {
+  scroll-behavior: auto;
+
+}
+*{
+  cursor: none;
+}
+body {
+  background-color: #def4ff;
+}
+/* ↓jsカーソル */
+.custom-cursor {
+  position: fixed;
+  width: 32px;
+  pointer-events: none;
+  z-index: 9999;
+}
+a,
+button,
+input,
+select,
+textarea {
+  cursor: none !important;
+}
+
+/* header */
+.header {
+  background-color: #0070c0;
+  color: #fff;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.head h1 img {
+  width: 100px;
+}
+.head {
+  max-width: 1100px;
+  display: flex;
+  margin: 0 auto;
+}
+.home {
+  display: none;
+}
+
+.hmenu {
+  text-align: right;
+  flex-grow: 1;
+  padding-top: 10px;
+}
+
+.hn-tel a img {
+  width: 30px;
+}
+
+.hn-tel a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.header ul {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 70px;
+}
+
+.h-nav {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.h-nav a {
+  color: #fff;
+}
+
+.h-nav li {
+  margin: 0 0 0 10px;
+}
+/* ハンバーガーメニュー */
+.ham {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 三本線の共通 */
+.ham span,
+.ham span::before,
+.ham span::after {
+  display: block;
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  margin: 0 auto;
+  transition: all 0.5s 0.3s, transform 0.5s 0s;
+  z-index: 200;
+}
+.ham span {
+  position: relative;
+}
+/* 疑似要素 */
+.ham span::before,
+.ham span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+/* 上下の位置 */
+.ham span::before {
+  top: -10px;
+}
+
+.ham span::after {
+  top: 10px;
+}
+
+/* クリック後（×に変形） */
+.ham.is-show span {
+  background-color: transparent;
+  transition: all 0.5s, transform 0.5s 0.3s;
+}
+
+.ham.is-show span::before {
+  top: 0;
+  transform: rotate(45deg);
+  transition: all 0.5s, transform 0.5s 0.3s;
+}
+
+.ham.is-show span::after {
+  top: 0;
+  transform: rotate(-45deg);
+  transition: all 0.5s, transform 0.5s 0.3s;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  background-color: #0070c0;
+  color: #fff;
+  padding-top: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.fn {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.fn img {
+  width: 100px;
+}
+.f-nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  margin: 0 20px;
+}
+footer a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+.f-nav p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.phone {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.phone a {
+  font-size: 18px;
+  font-weight: bold;
+}
+.phone img {
+  width: 22px;
+}
+.fp p {
+  padding-bottom: 20px;
+}
+
+/* ホバー設定 */
+.h-nav a,
+.f-nav a {
+  position: relative;
+}
+
+.h-nav a::after,
+.f-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.h-nav a:hover::after,
+.f-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* 波 */
+.nami {
+  fill: #0070c0;
+}
+
+.hune {
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* topボタン */
+.top-btn {
+  position: fixed;
+  /* 画面外に隠す（魚の横幅より大きめ） */
+  right: 30px;
+  bottom: -200px;
+  border: none;
+  background: none;
+  padding: 0;
+  z-index: 999;
+  transition: bottom 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 出現 */
+.top-btn.show {
+  right: 30px;
+  bottom: 20px;
+}
+
+/* 魚 */
+.top-btn img {
+  /* width: 150px; */
+  width: 50px;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.5));
+}
+
+/* ふわっと浮遊（任意） */
+.top-btn.show img {
+  animation: fishFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes fishFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ///// */
+/* index */
+.graphic {
+  text-align: center;
+}
+.graphic1 img {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+}
+.graphic2 img {
+  display: none;
+}
+.inner {
+  padding: 50px;
+  max-width: 800px;
+  background-color: #fff;
+  border: 5px solid #000;
+  text-align: center;
+  margin: -50px auto 50px;
+  position: relative;
+  z-index: 5;
+}
+
+.inner p {
+  font-size: 30px;
+  font-weight: bold;
+}
+.inner p:nth-child(1) {
+  color: #0070c0;
+}
+
+.news {
+  background-color: #0070c0;
+  color: #fff;
+  padding: 25px;
+}
+.news h2 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+.newsbox {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.news p {
+  padding: 5px 0;
+}
+.news p time {
+  margin-right: 80px;
+}
+
+.newscontents {
+  display: flex;
+}
+
+.information {
+  text-align: center;
+}
+.information h2 {
+  color: #071f69;
+  padding: 25px 0;
+}
+
+.photo ul {
+  margin: 0 auto;
+  display: flex;
+  max-width: 800px;
+  justify-content: space-between;
+}
+
+.photo img {
+  border: 5px solid #000;
+  width: 200px;
+}
+
+.photo li {
+  position: relative;
+}
+.photo p {
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  top: -10px;
+  left: -10px;
+}
+
+/* about */
+.about {
+  background-color: #fff;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 100px;
+}
+.about h2 {
+  color: #071f69;
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.intro {
+  display: flex;
+}
+
+.intro img {
+  border: 5px solid #000;
+  box-shadow: 10px 10px 0px #0070c0;
+  max-width: 70%;
+  height: 70%;
+}
+
+.intro p {
+  max-width: 420px;
+  background-color: #fff;
+  border: 5px solid #000;
+  padding: 40px;
+  text-align: justify;
+  margin-top: 100px;
+  margin-left: -120px;
+}
+.spec {
+  margin-top: 30px;
+}
+.spec tr {
+  line-height: 2;
+}
+
+.spec table th {
+  width: 150px;
+  color: #0070c0;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+}
+.spec table td {
+  vertical-align: top;
+}
+
+/* target */
+.target {
+  text-align: center;
+  margin: 0 auto;
+  background-color: #fff;
+  max-width: 1100px;
+  padding: 30px;
+  margin-bottom: 50px;
+}
+.target h2 {
+  color: #071f69;
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+.list img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+}
+.list-mobile {
+  display: none;
+}
+.slide-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  padding: 0 5px;
+}
+
+/* plan */
+.plan {
+  background-color: #fff;
+  max-width: 1100px;
+  padding: 30px 10px;
+  margin: 0 auto;
+}
+.plan h2 {
+  color: #071f69;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.plan-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plan-list h2 {
+  color: #fff;
+  font-size: 23px;
+}
+
+.note {
+  margin-bottom: 20px;
+}
+.plan-list dt {
+  color: #0070c0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.rental h2 {
+  color: #0070c0;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.rental dt {
+  margin-bottom: 5px;
+}
+
+.rental dd {
+  border-bottom: 1px dashed #737373;
+  padding-bottom: 8px;
+  width: 180px;
+  margin: 10px auto;
+}
+.rental dd:last-child {
+  border-bottom: none;
+}
+
+.noriai,
+.weekdays,
+.weekend {
+  max-width: 350px;
+  width: 100%;
+  border: 3px solid #000;
+  margin: 0 10px;
+}
+.contents {
+  padding: 0 25px 25px;
+}
+.fee dd {
+  font-size: 20px;
+  font-weight: bold;
+}
+.noriai h2 {
+  background-color: #38b173;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.weekdays h2,
+.weekend h2 {
+  background-color: #d7716e;
+  padding: 3.5px;
+  margin-bottom: 25px;
+}
+.rental dl {
+  text-align: center;
+}
+
+.access {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.map {
+  display: flex;
+}
+.map-w {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+}
+.map-frame {
+  width: 100%;
+  height: 100%;
+}
+.add {
+  margin: auto 25px;
+}
+.access h2,
+.rules h2 {
+  text-align: center;
+  color: #0070c0;
+  margin: 30px auto 20px;
+}
+.rules {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.rules ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+.rules li {
+  list-style: disc;
+}
+
+/* contact */
+.contact {
+  max-width: 1100px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.contact h2 {
+  color: #071f69;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  height: 30px;
+}
+select,
+input[type="date"] {
+  width: 50%;
+  height: 30px;
+}
+textarea {
+  resize: none;
+  width: 100%;
+  height: 250px;
+  max-width: 100%;
+  padding: 10px;
+}
+.required::after {
+  content: "※必須";
+  color: #f00;
+}
+.text {
+  margin: 20px 0 10px;
+}
+input[type="checkbox"] {
+  transform: scale(1);
+  width: 23px;
+  height: 23px;
+}
+
+input,
+select,
+textarea {
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  font-size: 18px;
+}
+.mit {
+  text-align: center;
+}
+
+.boder {
+  border: 1px solid #737373;
+  margin-top: 20px;
+}
+
+#submit {
+  background-color: #071f69;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-weight: bold;
+  width: 50%;
+  height: auto;
+  padding: 10px;
+  margin: 30px auto;
+  text-decoration: none;
+  transition: 0.3s;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+}
+#submit:hover {
+  background-color: #0070c0;
+  box-shadow: 0px 12px 24px #0b5dae63;
+  transform: translateY(-4px);
+}
+#submit:active {
+  transform: translateY(0px);
+  transition: 0.05s;
+}
+.privacy-policy {
+  font-size: 12px;
+  margin: 0;
+}
+.privacy-policy a {
+  color: #000;
+}
+
+.tel {
+  color: #071f69;
+  font-weight: bold;
+  margin-top: 30px;
+}
+.tel dt {
+  font-size: 30px;
+}
+.tel dd {
+  margin-top: 15px;
+}
+.number {
+  font-size: 50px;
+  color: #071f69;
+}
+
+.number img {
+  width: 50px;
+  margin-bottom: 5px;
+}
+
+.hour {
+  margin: 20px 0 0;
+}
+
+label {
+  font-size: 18px;
+}
+
+input:invalid {
+  scroll-margin-top: 60px;
+}
+
+/* 背景の魚 */
+/* 背景レイヤー */
+.fish-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* 魚 */
+.fish {
+  position: absolute;
+  opacity: 1;
+  will-change: transform;
+  animation: floatY 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatY {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+/* ----------- */
+/* レスポンシブ */
+/* ----------- */
+@media (max-width: 1024px) {
+  /* header */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .header ul {
+    display: block;
+    padding-left: 0;
+  }
+  .head h1 img {
+    width: 50px;
+    height: auto;
+  }
+  .hmenu {
+    padding: 0;
+    margin: auto;
+  }
+  .hn-tel a {
+    justify-content: center;
+  }
+  /* ハンバーガー */
+  .ham {
+    display: block;
+    order: 2;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .home {
+    display: block;
+  }
+  .hn {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(7, 31, 105, 0.9);
+    color: #fff;
+    padding: 80px 20px;
+    transition: 0.3s;
+    z-index: 100;
+  }
+
+  .h-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .h-nav li {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+  }
+  .h-nav li::after {
+    position: absolute;
+    content: "";
+    bottom: -10px;
+    width: 200px;
+    height: 1px;
+    background-color: #fff;
+    margin: 0 auto;
+  }
+
+  .hn-tel {
+    order: 1;
+    margin: 0 auto;
+  }
+  .hn-tel a img {
+    width: 25px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+  }
+  .hn.is-show {
+    right: 0;
+  }
+
+  /* footer */
+  .f-nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .f-nav li {
+    margin-bottom: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+  }
+  .f-nav li::after {
+    position: absolute;
+    content: "";
+    bottom: -10px;
+    width: 100%;
+    height: 1px;
+    background-color: #071f69;
+    margin: 0 auto;
+  }
+
+  .h-nav a:hover::after,
+  .f-nav a:hover::after {
+    display: none;
+  }
+
+  /* topボタン */
+  .top-btn {
+    display: none;
+  }
+
+  /* index */
+  .graphic1 img {
+    display: none;
+  }
+  .graphic2 img {
+    display: initial;
+    width: 100vw;
+  }
+
+  .inner {
+    padding: 25px;
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+  .inner p {
+    font-size: 18px;
+  }
+
+  .newsbox {
+    display: block;
+  }
+  .newscontents {
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .newscontents::after {
+    position: absolute;
+    content: "";
+    bottom: -10px;
+    width: 100%;
+    height: 1px;
+    background-color: #071f69;
+  }
+  .information h2 {
+    padding: 25px 0 10px;
+  }
+  .photo ul {
+    display: block;
+  }
+
+  .photo p {
+    position: initial;
+    width: 150px;
+    margin: 15px auto 5px;
+  }
+  /* 共通 */
+  .about h2,
+  .target h2,
+  .plan h2,
+  .contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .about,
+  .target,
+  .plan,
+  .contact {
+    padding: 20px;
+    background-color: transparent;
+  }
+
+  /* about */
+  .intro {
+    display: block;
+  }
+  .intro img {
+    max-width: 100%;
+  }
+
+  .intro p {
+    margin-top: 20px;
+    margin-left: 0px;
+    padding: 20px;
+    max-width: 100%;
+  }
+  .spec {
+    margin: 0px 0px 20px;
+  }
+  .spec table tr {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #071f69;
+    padding-bottom: 20px;
+  }
+  .spec table th {
+    color: #0070c0;
+    font-weight: bold;
+    text-align: left;
+    max-width: 200px;
+    padding-right: 0px;
+    vertical-align: top;
+    margin-top: 20px;
+  }
+
+  /* target */
+  .list img {
+    display: none;
+  }
+  .list-mobile {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .list-mobile th,
+  .list-mobile td {
+    border: 1px solid #cfe8f9;
+    width: 100vw;
+    height: 40px;
+    vertical-align: middle;
+  }
+  .list-mobile thead {
+    background-color: #0070c0;
+    color: #fff;
+  }
+  .list-mobile tbody tr:nth-child(even) {
+    background-color: #f4fbff;
+  }
+
+  /* plan */
+  .plan-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .plan dd p {
+    font-size: 20px;
+  }
+  .noriai,
+  .weekdays,
+  .weekend {
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  .noriai h2 {
+    padding: 27.5px;
+    margin-bottom: 0;
+  }
+  .weekdays h2,
+  .weekend h2 {
+    padding: 10px;
+    margin-bottom: 0;
+  }
+  .plan-list dt {
+    margin-top: 20px;
+  }
+  .rental h2 {
+    margin-top: 0px;
+  }
+
+  .map {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .map-w {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .map-frame {
+    margin: 0 auto;
+  }
+  .add {
+    margin: 20px 0 0 20px;
+  }
+
+  .rules {
+    padding: 20px;
+    margin: 0;
+  }
+  /* contact */
+  #submit {
+    font-size: 15px;
+  }
+  .tel dt {
+    font-size: 21px;
+  }
+  .number {
+    font-size: 38px;
+  }
+  .number img {
+    width: 35px;
+    margin-bottom: 5px;
+  }
+
+  input:invalid {
+    scroll-margin-top: 120px;
+  }
+}
